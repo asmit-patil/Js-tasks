@@ -1,18 +1,13 @@
-// // for (var i = 1; i <= 3; i++) {
-// //     setTimeout(function() {
-// //       console.log(i + " second(s) elapsed");
-// //     }, i * 1000);
-// //   }
+function callba(n) {
+  console.log('Hello ' + n);
+}
+                                                                                                                                                                                               
+function processUserInput(callbac) {
+  var name = 'AP';
+  //console.log('bye ' + name )
+  
+  callbac(name);
+  
+}
 
-// for (var i = 1; i <= 3; i++) {
-//     (function(i) {
-//       setTimeout(function() {
-//         console.log(i + " second(s) elapsed");
-//       }, i * 1000);
-//     })(i);
-//   }
-for (let i = 1; i <= 3; i++) {
-    setTimeout(function() {
-      console.log(i + " second(s) elapsed");
-    }, i * 1000);
-  }
+processUserInput(callba);

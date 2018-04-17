@@ -37,12 +37,12 @@ add(data)
         currentnode.next = node;
     }
     this.size++;
-    return true;
+   return false;
 }
 
-insertAt(data, index)
+insertAt(data, nodeindex)
 {
-    if (index > 0 && index > this.size)
+    if (node > 0 && node > this.size)
         return false;
     else {
         // creates a new node
@@ -53,7 +53,7 @@ insertAt(data, index)
  
         // add the element to the
         // first index
-        if (index == 0) {
+        if (nodeindex == 0) {
             node.next = head;
             this.head = node;
         } else {
@@ -62,7 +62,7 @@ insertAt(data, index)
  
             // iterate over the list to find
             // the position to insert
-            while (iterator < index) {
+            while (iterator < nodeindex) {
                 iterator++;
                 prevnode = currnode;
                 currnode = currnode.next;
@@ -159,7 +159,7 @@ isEmpty()
 
 size_of_list()
 {
-    console.log(this.size);
+    return (this.size);
 }
 
 
@@ -171,7 +171,7 @@ printList()
         str += currnode.data + " ";
         currnode = currnode.next;
     }
-    console.log(str);
+    return (str);
 }
 
 }
@@ -185,15 +185,15 @@ console.log(ll.isEmpty());
 
 // adding element to the list
 ll.add(10);
- 
+var p= ll.printList();
 // prints 10
-console.log("Printitng list after adding first element: " );
-ll.printList();
+console.log("Printitng list after adding first element: " + p);
+//ll.printList();
 console.log();
 
 // returns 1
-console.log("size of list is: " );
-ll.size_of_list();
+console.log("size of list is: " +(ll.size_of_list()));
+//ll.size_of_list();
 console.log();
  
 // adding more elements to the list
@@ -201,17 +201,17 @@ ll.add(20);
 ll.add(30);
 ll.add(40);
 ll.add(50);
-console.log("Printitng list after adding more elements in existing list: " );
+console.log("Printitng list after adding more elements in existing list: " + ll.printList() );
 // returns 10 20 30 40 50
-ll.printList();
+//ll.printList();
 console.log();
 
 //remove 40 from list
 ll.removeElement(40);
 
 // returns 10 20 30 50
-console.log("list after deleting element 40 from list "  );
-ll.printList();
+console.log("list after deleting element 40 from list: "+ ll.printList()  );
+//ll.printList();
 console.log();
 // returns 1
 console.log("Index of 30 is : " + ll.indexOf(30));
@@ -220,8 +220,8 @@ console.log();
 // ll contains 10 20 60 30 40
 console.log("adding 60 in list at index 2");
 ll.insertAt(60, 2);
-console.log("list after adding element 60 "  );
-ll.printList();
+console.log("list after adding element 60: " +ll.printList()  );
+//ll.printList();
 console.log();
 // returns false
 console.log("is List Empty ? " + ll.isEmpty());
@@ -230,6 +230,7 @@ console.log();
 ll.removeFrom(3);
  
 // prints 10 20 60 40
-console.log("list after deleting element of index 3 "  );
-ll.printList();
+console.log("list after deleting element of index[3]: "+ ll.printList()  );
+//ll.printList();
 
+console.log(ll.removeElement(78));
